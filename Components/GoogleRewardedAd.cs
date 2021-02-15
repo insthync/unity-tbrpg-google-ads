@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace TurnbaseRPG.Extensions.GoogleAds
 {
-    public class GoogleRewardedAds : MonoBehaviour
+    public class GoogleRewardedAd : MonoBehaviour
     {
         [System.Serializable]
         public class StringEvent : UnityEvent<string> { }
@@ -81,7 +81,11 @@ namespace TurnbaseRPG.Extensions.GoogleAds
 
         private void RewardedAd_OnUserEarnedReward(object sender, Reward e)
         {
-            onAdEarnedReward.Invoke(e.Type, e.Amount);
+            WebServiceGoogleRewardedAd.Instance.EarnedReward(e.Type, (long)e.Amount, (result) =>
+            {
+                if (result.Success)
+                    onAdEarnedReward.Invoke(e.Type, e.Amount);
+            });
         }
 
         private void RewardedAd_OnAdClosed(object sender, System.EventArgs e)
