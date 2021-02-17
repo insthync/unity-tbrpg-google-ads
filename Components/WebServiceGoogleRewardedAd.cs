@@ -30,6 +30,6 @@ public class WebServiceGoogleRewardedAd : MonoBehaviour
                 PlayerStamina.SetDataRange(result.updateStaminas);
             }
             GameInstance.GameService.HandleResult(result, onSuccess, onError);
-        }, dict);
+        }, dict, Player.CurrentPlayer.LoginToken);
     }
 }
