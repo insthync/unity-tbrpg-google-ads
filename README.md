@@ -6,4 +6,10 @@ Google Ads/Admob extensions for Turnbase RPG
 * Extract this to to your Turnbase RPG project -> Assets folder (You may create subfolder before extracting into it).
 * Attach `WebServiceGoogleRewardedAd` component to the same game object which attached `WebServiceClient`.
 * Attach `GoogleRewardedAd` component to any game object in scene which have buttons to show ads, set its `androidAdUnitId`, `iosAdUnitId` and other events as you wish. Then set `Show` function to buttons.
-* Set rewards in `GameDatabase` -> `GoogleAdRewards`, `Id` is name which you can set in dashboard -> app -> ad unit -> settings. After that export game data to your game service.
+* Set rewards in `GameDatabase` -> `GoogleAdRewards`, `Id` is name which you can set in dashboard -> app -> ad unit -> settings -> `Earn reward item`. After that export game data to your game service.
+
+![](./ScreenShots/AdmobRewardId.png)
+
+*From the image above, Id is `GOLD`*
+
+* Export game data to web-service.
