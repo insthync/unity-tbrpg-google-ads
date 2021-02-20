@@ -34,9 +34,9 @@ public partial class GameDatabase
         {
             if (!string.IsNullOrEmpty(json))
                 json += ",";
-            json += entry.ToJson();
+            json += "\"" + entry.id + "\":" + entry.ToJson();
         }
-        json = "[" + json + "]";
+        json = "{" + json + "}";
 
         keyValues["googleAdRewards"] = json;
     }
